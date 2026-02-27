@@ -112,7 +112,7 @@ export function Pricing() {
         {/* Footnotes */}
         <div className="mt-12 text-right text-[12px] text-[#64748b] font-medium leading-[1.8] font-[Paperozi] opacity-80">
           * 인건비 + 운영비 모든 포함 (VAT 별도)<br />
-          * 베드헌팅 수수료 별도 (15~20%)<br />
+          * 헤드헌팅 수수료 별도 (15~20%)<br />
           * 금액은 베트남 현지의 평균 연봉으로 책정한 금액이므로 변동될 수 있습니다.
         </div>
       </div>

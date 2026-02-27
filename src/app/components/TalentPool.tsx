@@ -168,7 +168,7 @@ export function TalentPool() {
             인재풀
           </h2>
           <p className="text-[16px] md:text-[20px] text-[#475569] font-medium font-[Paperozi]">
-            VELLO가 검증한 베트남 인재를 만나보세요.
+            Vello가 검증한 베트남 인재를 만나보세요.
           </p>
         </div>
 

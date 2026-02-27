@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { CheckCircle2, Play, Layout, Check } from 'lucide-react';
+import managerImg from '../../assets/인물 13.png';
 
 export function Process() {
   const timeline = [
@@ -56,8 +57,8 @@ export function Process() {
                       className="h-full bg-[#11b8a6]"
                     />
                   </div>
-                  <strong className="block text-[15px] font-black text-[#0f172a] mt-4 font-[Paperozi]">{tick.strong}</strong>
-                  <span className="block text-[12px] text-[#64748b] font-bold mt-1 font-[Paperozi]">{tick.span}</span>
+                  <strong className="block text-[20px] font-black text-[#0f172a] mt-4 font-[Paperozi]">{tick.strong}</strong>
+                  <span className="block text-[14px] text-[#64748b] font-bold mt-1 font-[Paperozi]">{tick.span}</span>
                 </div>
               ))}
             </div>
@@ -93,11 +94,9 @@ export function Process() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-[20px] p-5 shadow-[0_15px_40px_rgba(17,184,166,0.08)] border border-[#EAF8F5] flex items-center gap-4 max-w-[340px]"
+                className="bg-white rounded-[20px] p-5 shadow-[0_15px_40px_rgba(17,184,166,0.08)] border border-[#EAF8F5] flex items-center gap-4 max-w-[400px]"
               >
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#11b8a6]/10 to-[#11b8a6]/5 flex items-center justify-center overflow-hidden border border-[#EAF8F5]">
-                  <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Ana&backgroundColor=ffffff" alt="Ana" className="w-full h-full object-cover" />
-                </div>
+                <img src={managerImg} alt="Ana" className="w-14 h-14 rounded-xl object-cover flex-shrink-0" />
                 <div>
                   <div className="px-2 py-0.5 bg-[#EAF8F5] text-[#11b8a6] text-[10px] font-bold rounded-md w-fit mb-1 leading-none">전담 매니저</div>
                   <h3 className="text-[16px] font-bold text-[#0f172a] leading-tight mb-0.5 font-[Paperozi]">안녕하세요. Ana👋</h3>
@@ -111,7 +110,7 @@ export function Process() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
                 viewport={{ once: true, amount: 0.7 }}
-                className="bg-white rounded-[24px] p-6 shadow-[0_25px_50px_rgba(17,184,166,0.1)] border border-[#EAF8F5] max-w-[400px] lg:ml-6"
+                className="bg-white rounded-[24px] p-6 shadow-[0_25px_50px_rgba(17,184,166,0.1)] border border-[#EAF8F5] max-w-[400px]"
               >
                 {/* Header */}
                 <motion.div

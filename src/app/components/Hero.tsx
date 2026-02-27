@@ -9,7 +9,7 @@ export function Hero() {
           <div>
 
 
-            <h1 className="text-[clamp(32px,4.5vw,48px)] font-bold tracking-tight leading-[1.2] mb-5 whitespace-pre-line font-[Paperozi] p-[0px]">{"인건비 거품 없이\n베트남 경력직으로\n팀을 확장하세요"}</h1>
+            <h1 className="text-[clamp(28px,3.8vw,42px)] font-bold tracking-tight leading-[1.3] mb-5 whitespace-pre-line font-[Paperozi] p-[0px] break-keep">{"아직도 국내에서만 찾고 계신가요?\n검증된 베트남 경력직으로\n팀의 가능성을 확장하세요."}</h1>
 
             <p className="text-[16px] leading-[1.65] text-[#334155] mb-8 font-[Paperozi]">정해진 프로세스와 전담 매니저 케어,<br />벨로의 구독형 서비스로 안전하게 매칭하고 함께 성장합니다.</p>
 

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
 import { PainPoints } from './components/PainPoints';
@@ -20,6 +20,17 @@ import { FixedChat } from './components/FixedChat';
 
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
+  const [checkedItems, setCheckedItems] = useState<boolean[]>([false, false, false, false, false, false]);
+
+  const handleToggleItem = useCallback((index: number) => {
+    setCheckedItems(prev => {
+      const next = [...prev];
+      next[index] = !next[index];
+      return next;
+    });
+  }, []);
+
+  const checkedCount = checkedItems.filter(Boolean).length;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,8 +74,8 @@ export default function App() {
       <main id="top" className="pt-[92px]">
         <Hero />
         <PainPoints />
-        <Checklist />
-        <Services />
+        <Checklist checkedItems={checkedItems} onToggleItem={handleToggleItem} />
+        <Services checkedCount={checkedCount} />
         <SupportProcess />
         <StrategicValue />
         <TalentPool />

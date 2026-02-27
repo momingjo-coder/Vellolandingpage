@@ -73,81 +73,118 @@ export function Verification() {
           </p>
         </motion.div>
 
-        {/* Horizontal Process Steps */}
-        <div className="relative mb-10">
-          <div className="overflow-x-auto pb-4 -mx-4 px-4">
-            <div className="min-w-[1100px]">
-              {/* Top Row: Icons + Connectors */}
-              <div className="flex items-center justify-between mb-6 px-4">
-                {steps.map((item, idx) => {
-                  const Icon = item.icon;
-                  return (
-                    <div key={idx} className="flex items-center flex-1 last:flex-initial">
-                      {/* Icon Circle */}
-                      <motion.div
-                        initial={{ opacity: 0, scale: 0.5 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: idx * 0.12, duration: 0.5, ease: 'easeOut' }}
-                        viewport={{ once: true, amount: 0.3 }}
-                        className="relative flex-shrink-0"
-                      >
-                        <div className="w-[68px] h-[68px] md:w-[76px] md:h-[76px] rounded-full bg-gradient-to-br from-[#d5f5f0] to-[#eafaf7] border-[3px] border-[#11b8a6]/25 flex items-center justify-center shadow-[0_8px_24px_rgba(17,184,166,0.12)] hover:shadow-[0_12px_32px_rgba(17,184,166,0.2)] transition-all hover:scale-105 relative z-10">
-                          <Icon className="w-7 h-7 md:w-8 md:h-8 text-[#11b8a6]" strokeWidth={1.8} />
+        {/* Desktop: Horizontal Process Steps */}
+        <div className="relative mb-10 hidden lg:block">
+          <div className="min-w-[1100px]">
+            {/* Top Row: Icons + Connectors */}
+            <div className="flex items-center justify-between mb-6 px-4">
+              {steps.map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <div key={idx} className="flex items-center flex-1 last:flex-initial">
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.5 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: idx * 0.12, duration: 0.5, ease: 'easeOut' }}
+                      viewport={{ once: true, amount: 0.3 }}
+                      className="relative flex-shrink-0"
+                    >
+                      <div className="w-[68px] h-[68px] md:w-[76px] md:h-[76px] rounded-full bg-gradient-to-br from-[#d5f5f0] to-[#eafaf7] border-[3px] border-[#11b8a6]/25 flex items-center justify-center shadow-[0_8px_24px_rgba(17,184,166,0.12)] hover:shadow-[0_12px_32px_rgba(17,184,166,0.2)] transition-all hover:scale-105 relative z-10">
+                        <Icon className="w-7 h-7 md:w-8 md:h-8 text-[#11b8a6]" strokeWidth={1.8} />
+                      </div>
+                      <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-[#11b8a6] text-white text-[10px] font-black flex items-center justify-center shadow-md z-20 border-2 border-white">
+                        {idx + 1}
+                      </div>
+                    </motion.div>
+                    {idx < steps.length - 1 && (
+                      <div className="flex-1 flex items-center mx-2 relative">
+                        <div className="w-full h-[2px] bg-[#EAF8F5] rounded-full relative overflow-hidden">
+                          <motion.div
+                            initial={{ width: 0 }}
+                            whileInView={{ width: '100%' }}
+                            transition={{ delay: 0.3 + idx * 0.15, duration: 0.6, ease: 'easeOut' }}
+                            viewport={{ once: true }}
+                            className="h-full bg-gradient-to-r from-[#11b8a6] to-[#11b8a6]/50 rounded-full"
+                          />
                         </div>
-                        {/* Step number badge */}
-                        <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-[#11b8a6] text-white text-[10px] font-black flex items-center justify-center shadow-md z-20 border-2 border-white">
-                          {idx + 1}
-                        </div>
-                      </motion.div>
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="flex-shrink-0 -ml-1">
+                          <path d="M4 2l4 4-4 4" stroke="#11b8a6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.5" />
+                        </svg>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+            {/* Bottom Row: Text Content */}
+            <div className="flex justify-between px-4">
+              {steps.map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 + idx * 0.12, duration: 0.4, ease: 'easeOut' }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  className="flex flex-col items-center text-center"
+                  style={{ width: `${100 / steps.length}%` }}
+                >
+                  <span className="text-[10px] font-bold text-[#11b8a6] tracking-wider uppercase mb-1 font-[Paperozi]">
+                    {item.step}
+                  </span>
+                  <h4 className="text-[14px] md:text-[15px] font-bold text-[#0f172a] mb-1 font-[Paperozi] leading-tight">
+                    {item.title}
+                  </h4>
+                  <p className="text-[11px] text-[#64748b] font-medium leading-[1.5] whitespace-pre-line font-[Paperozi]">
+                    {item.desc}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
 
-                      {/* Connector line between icons */}
-                      {idx < steps.length - 1 && (
-                        <div className="flex-1 flex items-center mx-2 relative">
-                          <div className="w-full h-[2px] bg-[#EAF8F5] rounded-full relative overflow-hidden">
-                            <motion.div
-                              initial={{ width: 0 }}
-                              whileInView={{ width: '100%' }}
-                              transition={{ delay: 0.3 + idx * 0.15, duration: 0.6, ease: 'easeOut' }}
-                              viewport={{ once: true }}
-                              className="h-full bg-gradient-to-r from-[#11b8a6] to-[#11b8a6]/50 rounded-full"
-                            />
-                          </div>
-                          {/* Arrow head */}
-                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="flex-shrink-0 -ml-1">
-                            <path d="M4 2l4 4-4 4" stroke="#11b8a6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.5" />
-                          </svg>
-                        </div>
-                      )}
+        {/* Mobile: Vertical Timeline */}
+        <div className="relative mb-10 lg:hidden">
+          <div className="relative pl-16">
+            {/* Vertical line */}
+            <div className="absolute left-[33px] top-0 bottom-0 w-[2px] bg-[#EAF8F5]" />
+
+            {steps.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: idx * 0.1, duration: 0.5, ease: 'easeOut' }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  className="relative mb-8 last:mb-0"
+                >
+                  {/* Icon */}
+                  <div className="absolute -left-16 top-0">
+                    <div className="w-[52px] h-[52px] rounded-full bg-gradient-to-br from-[#d5f5f0] to-[#eafaf7] border-[3px] border-[#11b8a6]/25 flex items-center justify-center shadow-[0_4px_12px_rgba(17,184,166,0.12)] relative z-10">
+                      <Icon className="w-6 h-6 text-[#11b8a6]" strokeWidth={1.8} />
                     </div>
-                  );
-                })}
-              </div>
+                    <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-[#11b8a6] text-white text-[9px] font-black flex items-center justify-center shadow-md z-20 border-2 border-white">
+                      {idx + 1}
+                    </div>
+                  </div>
 
-              {/* Bottom Row: Text Content */}
-              <div className="flex justify-between px-4">
-                {steps.map((item, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 + idx * 0.12, duration: 0.4, ease: 'easeOut' }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    className="flex flex-col items-center text-center"
-                    style={{ width: `${100 / steps.length}%` }}
-                  >
-                    <span className="text-[10px] font-bold text-[#11b8a6] tracking-wider uppercase mb-1 font-[Paperozi]">
+                  {/* Content */}
+                  <div className="bg-white rounded-2xl p-4 shadow-sm border border-[#EAF8F5]">
+                    <span className="text-[10px] font-bold text-[#11b8a6] tracking-wider uppercase mb-1 block font-[Paperozi]">
                       {item.step}
                     </span>
-                    <h4 className="text-[14px] md:text-[15px] font-bold text-[#0f172a] mb-1 font-[Paperozi] leading-tight">
+                    <h4 className="text-[15px] font-bold text-[#0f172a] mb-1 font-[Paperozi] leading-tight">
                       {item.title}
                     </h4>
-                    <p className="text-[11px] text-[#64748b] font-medium leading-[1.5] whitespace-pre-line font-[Paperozi]">
+                    <p className="text-[12px] text-[#64748b] font-medium leading-[1.5] whitespace-pre-line font-[Paperozi]">
                       {item.desc}
                     </p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
 
