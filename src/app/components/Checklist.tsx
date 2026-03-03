@@ -42,7 +42,7 @@ export function Checklist({ checkedItems = [], onToggleItem }: ChecklistProps) {
     <section className="py-14 pb-28 px-4 bg-[#E8F6F4]">
       <div className="container mx-auto max-w-[1080px]">
         <h2 className="text-[clamp(20px,3vw,30px)] font-bold tracking-tight mb-4 font-[Paperozi] text-center">
-          인재 채용이 어려움이 있는 기업 <span style={{ color: '#17BAA8' }}>'체크리스트'</span>
+          인재 채용의 어려움이 있는 기업 <span style={{ color: '#17BAA8' }}>'체크리스트'</span>
         </h2>
         <div className="bg-white rounded-[18px] shadow-[0_4px_16px_rgba(0,0,0,0.08)] p-8 pb-14 relative overflow-visible">
           <motion.ul
@@ -96,9 +96,10 @@ export function Checklist({ checkedItems = [], onToggleItem }: ChecklistProps) {
             {/* 말풍선 - 캐릭터 오른쪽 */}
             <div className="relative -ml-2">
               <div
-                className="bg-[#11b8a6] text-white text-xs font-bold font-[Paperozi] break-keep px-4 py-2.5 rounded-xl shadow-md whitespace-nowrap"
+                className="bg-[#11b8a6] text-white text-xs font-bold font-[Paperozi] break-keep px-4 py-2.5 rounded-xl shadow-md md:whitespace-nowrap max-w-[200px] md:max-w-none"
               >
-                위의 항목 중 하나라도 해당된다면, 지금 <span className="text-[#FBBF24]">Vello</span>로 해결하세요.
+                위의 항목 중 하나라도 해당된다면,{' '}
+                지금 <span className="text-[#FBBF24]">Vello</span>로 해결하세요.
               </div>
               {/* 말풍선 꼬리 - 왼쪽 */}
               <div

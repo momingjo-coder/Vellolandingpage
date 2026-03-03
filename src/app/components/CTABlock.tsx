@@ -18,8 +18,8 @@ function FloatingInput({ label, type = "text", placeholder, required }: Floating
     <div className="relative group">
       <label
         className={`absolute left-5 transition-all duration-300 pointer-events-none font-bold ${isFloating
-            ? "-top-2.5 text-[12px] text-[#11b8a6] bg-white px-2 ml-[-4px] z-20"
-            : "top-4 text-[15px] text-[#94a3b8]"
+          ? "-top-2.5 text-[12px] text-[#11b8a6] bg-white px-2 ml-[-4px] z-20"
+          : "top-4 text-[15px] text-[#94a3b8]"
           }`}
       >
         {label} {required && <span className="text-[#11b8a6]/50">*</span>}
@@ -31,8 +31,8 @@ function FloatingInput({ label, type = "text", placeholder, required }: Floating
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
         className={`w-full px-5 py-4 rounded-2xl bg-white border transition-all outline-none font-medium h-[56px] ${isFocused
-            ? "border-[#11b8a6] ring-4 ring-[#11b8a6]/10"
-            : "border-[#D1EBE9]"
+          ? "border-[#11b8a6] ring-4 ring-[#11b8a6]/10"
+          : "border-[#D1EBE9]"
           }`}
       />
     </div>
@@ -56,16 +56,15 @@ export function CTABlock() {
                 인재 매칭 상담 신청
               </div>
 
-              <h2 className="text-[clamp(26px,5vw,44px)] font-bold mb-8 font-[Paperozi] leading-[1.3] text-[#0f172a]">
-                우리 예산으로<br />
-                어떤 인재를<br />
-                만날 수 있을지<br />
-                먼저 확인해 보세요.
+              <h2 className="text-[clamp(26px,5vw,44px)] font-bold mb-4 font-[Paperozi] leading-[1.3] text-[#0f172a]">
+                예산과 직무만 남기면,<br />
+                <span className="text-[#11b8a6]">'익명 이력서 3부'</span>가<br />
+                무료로 도착합니다.
               </h2>
 
               <div className="space-y-10">
                 <p className="text-[17px] md:text-[19px] font-medium leading-[1.8] text-[#475569] font-[Paperozi] opacity-90 break-keep max-w-[500px]">
-                  단 1분, 폼을 작성해 주시면 평균 11일 이내에 귀사에 꼭 맞는 인재 프로필을 무료로 찾아 보내드립니다.
+                  24시간 내 실제 채용 가능한 인재 프로필을 보내드립니다.
                 </p>
 
                 <div className="grid sm:grid-cols-1 gap-4 mt-10">

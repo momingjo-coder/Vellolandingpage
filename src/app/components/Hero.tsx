@@ -11,7 +11,7 @@ export function Hero() {
 
             <h1 className="text-[clamp(28px,3.8vw,42px)] font-bold tracking-tight leading-[1.3] mb-5 whitespace-pre-line font-[Paperozi] p-[0px] break-keep">{"아직도 국내에서만 찾고 계신가요?\n검증된 베트남 경력직으로\n팀의 가능성을 확장하세요."}</h1>
 
-            <p className="text-[16px] leading-[1.65] text-[#334155] mb-8 font-[Paperozi]">정해진 프로세스와 전담 매니저 케어,<br />벨로의 구독형 서비스로 안전하게 매칭하고 함께 성장합니다.</p>
+            <p className="text-[16px] leading-[1.65] text-[#334155] mb-8 font-[Paperozi]">체계적인 검증과 전담 매니저의 밀착 케어.<br />Vello의 투명한 구독형 서비스로, 채용부터 안착까지 안전하게 책임집니다.</p>
 
             <a
               href="#consult"

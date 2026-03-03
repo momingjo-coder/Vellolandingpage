@@ -85,6 +85,7 @@ export function PainPoints() {
             </motion.div>
           ))}
         </motion.div>
+        <p className="text-right text-[10px] text-gray-400 mt-3 font-[Paperozi]">출처: 인쿠르트 2025년도 자료.</p>
       </div>
     </section>
   );

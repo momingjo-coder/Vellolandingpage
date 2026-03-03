@@ -17,6 +17,7 @@ import { TechStackMarquee } from './components/TechStackMarquee';
 import { Footer } from './components/Footer';
 
 import { FixedChat } from './components/FixedChat';
+import { FloatingBar } from './components/FloatingBar';
 
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -70,6 +71,7 @@ export default function App() {
       <Navigation scrolled={scrolled} />
 
       <FixedChat />
+      <FloatingBar />
 
       <main id="top" className="pt-[92px]">
         <Hero />

@@ -5,28 +5,28 @@ export function StrategicValue() {
     const values = [
         {
             title: '비용 효율성',
-            desc: '한국 인력 1명으로 베트남 인력 3명\n→ 33% 비용 절감',
+            desc: <>한국 인력 1명으로 베트남 인력 3명{'\n'}<span style={{ color: '#6BC4B5' }}>→ 33% 비용 절감</span></>,
             Icon: Banknote,
             iconColor: '#FF8A7A',
             bgColor: '#FFF5F4',
         },
         {
             title: '다양한 역량 확보',
-            desc: '단일 역할만 가능한 한국 인력 대비\n디자인, 기획, 개발 등 다방면의\n업무 지원 가능',
+            desc: <>단일 역할만 가능한 한국 인력 대비{'\n'}<span style={{ color: '#6BC4B5' }}>디자인, 기획, 개발 등</span> 다방면의{'\n'}업무 지원 가능</>,
             Icon: Trees,
             iconColor: '#6BC4B5',
             bgColor: '#F0F9F8',
         },
         {
             title: '리스크 관리',
-            desc: '퇴사, 휴직 등의 리스크 없이\n파트타임 교대 가능하여\n안정적 업무 유지',
+            desc: <>퇴사, 휴직 등의 <span style={{ color: '#6BC4B5' }}>리스크 없이</span>{'\n'}파트타임 교대 가능하여{'\n'}안정적 업무 유지</>,
             Icon: ShieldCheck,
             iconColor: '#4FD1C5',
             bgColor: '#F0FAFB',
         },
         {
             title: '높은 확장성',
-            desc: '업무량 증가 시 신속한 인력 투입\n빠른 대응 가능',
+            desc: <>업무량 증가 시 신속한 인력 투입{'\n'}<span style={{ color: '#6BC4B5' }}>빠른 대응 가능</span></>,
             Icon: BarChart3,
             iconColor: '#FBBF24',
             bgColor: '#FFFBF0',

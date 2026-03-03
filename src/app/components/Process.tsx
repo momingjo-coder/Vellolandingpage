@@ -76,6 +76,25 @@ export function Process() {
           </div>
         </div>
 
+        {/* Dashboard Section Header */}
+        <div className="text-center mb-10 mt-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-[clamp(22px,3.5vw,32px)] font-bold tracking-tight leading-[1.3] mb-4 font-[Paperozi] text-[#0f172a] break-keep">
+              보이지 않는 비대면 근무,{' '}
+              <span className="text-[#11b8a6]">보이는 데이터</span>로 확실하게
+            </h3>
+            <p className="text-[15px] md:text-[17px] leading-[1.7] text-[#475569] font-medium font-[Paperozi] break-keep opacity-90 max-w-[580px] mx-auto border-l-[3px] border-[#11b8a6] pl-5 text-left">
+              물리적 거리가 업무의 거리가 되지 않도록.{' '}
+              흩어져 있던 인사 관리 기록을 하나의 <span className="text-[#11b8a6] font-bold">올인원 시스템</span>으로 통합해 투명하게 관리합니다.
+            </p>
+          </motion.div>
+        </div>
+
         {/* Dashboard Cards Section */}
         <div className="relative w-full max-w-[1000px] mx-auto min-h-[420px] lg:min-h-[460px]">
           {/* Grid Background Effect */}
