@@ -103,6 +103,8 @@ export function CTABlock() {
                 <FloatingInput label="담당자 이름" placeholder="성함을 입력해주세요" required />
                 <FloatingInput label="회사 이메일" type="email" placeholder="email@vello.com" required />
                 <FloatingInput label="찾고 계신 직무 (예: React 개발자)" placeholder="직무를 입력해주세요" required />
+                <FloatingInput label="예산 (월급여 100만원 이상)" placeholder="예산을 입력해주세요" required />
+                <FloatingInput label="채용 직무 연차 (3년 이상)" placeholder="연차를 입력해주세요" required />
 
                 <div className="space-y-3">
                   <label className="text-[13px] font-bold text-[#11b8a6] ml-1">

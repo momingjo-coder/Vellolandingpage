@@ -69,10 +69,6 @@ export function Process() {
             <a href="#consult" className="px-7 py-3.5 bg-[#11b8a6] text-white rounded-full font-bold text-[15px] hover:bg-[#0f9d8e] transition-all transform hover:-translate-y-1 shadow-[0_10px_20px_rgba(17,184,166,0.2)]">
               자세히 알아보기
             </a>
-            <a href="#consult" className="flex items-center gap-2 px-7 py-3.5 bg-white border-2 border-[#11b8a6]/20 text-[#11b8a6] rounded-full font-bold text-[15px] hover:bg-[#F1F9F8] transition-all transform hover:-translate-y-1">
-              <Play className="w-4 h-4 fill-current" />
-              데모 시연 예약
-            </a>
           </div>
         </div>
 

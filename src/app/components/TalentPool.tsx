@@ -155,8 +155,8 @@ export function TalentPool() {
       <div className="container mx-auto max-w-[1080px]">
         {/* Top Tagline */}
         <div className="text-center mb-10">
-          <p className="text-[18px] md:text-[20px] font-bold text-black mb-14 font-[Paperozi]">
-            1년 내 떠나는 아쉬운 만남 대신,<br className="hidden md:block" />
+          <p className="text-[24px] md:text-[28px] font-bold text-black mb-14 font-[Paperozi]">
+            채용에 투자하는 시간과 비용을 줄이고,<br className="hidden md:block" />
             우리 회사에 몰입하는 '진짜 팀원'을 만나세요.
           </p>
 

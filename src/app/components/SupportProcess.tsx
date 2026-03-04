@@ -59,7 +59,7 @@ export function SupportProcess() {
                 </h2>
 
                 {/* Support Process Label */}
-                <div className="hidden lg:flex justify-center items-center gap-3 mb-6">
+                <div className="hidden lg:flex justify-center items-center gap-3 mb-6 pr-0 md:pr-10">
                     <div className="w-16 h-[1.5px] bg-[#6BC4B5]/40" />
                     <span className="text-[#6BC4B5] text-[13px] font-bold leading-tight text-center">
                         Vello 기업 지원<br />프로세스
@@ -104,17 +104,7 @@ export function SupportProcess() {
                                 zIndex: 10 - idx,
                             }}
                         >
-                            {/* Decorative Dot - Desktop: top center, Mobile: left center */}
-                            {idx !== 0 && (
-                                <>
-                                    <div
-                                        className="hidden md:block absolute -top-1 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[#11b8a6] border-4 border-white shadow-sm z-20 group-hover:scale-125 transition-transform"
-                                    />
-                                    <div
-                                        className="md:hidden absolute top-1/2 -left-1 -translate-y-1/2 w-4 h-4 rounded-full bg-[#11b8a6] border-4 border-white shadow-sm z-20 group-hover:scale-125 transition-transform"
-                                    />
-                                </>
-                            )}
+
 
                             <div className="text-[20px] font-bold mb-1 opacity-60 text-[#11b8a6]">0{idx + 1}</div>
                             <div className="text-[32px] font-bold mb-4 text-[#0f172a] font-[Paperozi] tracking-tight group-hover:scale-105 transition-transform duration-500">{step.title}</div>

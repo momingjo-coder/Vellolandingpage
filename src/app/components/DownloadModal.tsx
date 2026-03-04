@@ -14,6 +14,8 @@ export function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
         name: '',
         email: '',
         phone: '',
+        budget: '',
+        experience: '',
     });
     const [agreed, setAgreed] = useState(false);
     const [errors, setErrors] = useState<Record<string, boolean>>({});
@@ -40,6 +42,8 @@ export function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
         if (!form.name.trim()) newErrors.name = true;
         if (!form.email.trim()) newErrors.email = true;
         if (!form.phone.trim()) newErrors.phone = true;
+        if (!form.budget.trim()) newErrors.budget = true;
+        if (!form.experience.trim()) newErrors.experience = true;
 
         setErrors(newErrors);
         setShowAgreeError(!agreed);
@@ -167,6 +171,40 @@ export function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
                                 {errors.phone && (
                                     <p className="text-red-500 text-[11px] mt-1 font-[Paperozi]">연락처를 입력해주세요.</p>
                                 )}
+                            </div>
+
+                            {/* 예산 + 채용 직무 연차 */}
+                            <div className="grid grid-cols-2 gap-4 mb-6">
+                                <div>
+                                    <label className="block text-[14px] font-bold text-[#0f172a] mb-2 font-[Paperozi]">
+                                        예산 (월급여)
+                                    </label>
+                                    <input
+                                        type="text"
+                                        placeholder="100만원 이상"
+                                        value={form.budget}
+                                        onChange={e => handleChange('budget', e.target.value)}
+                                        className={inputClass('budget')}
+                                    />
+                                    {errors.budget && (
+                                        <p className="text-red-500 text-[11px] mt-1 font-[Paperozi]">예산을 입력해주세요.</p>
+                                    )}
+                                </div>
+                                <div>
+                                    <label className="block text-[14px] font-bold text-[#0f172a] mb-2 font-[Paperozi]">
+                                        채용 직무 연차
+                                    </label>
+                                    <input
+                                        type="text"
+                                        placeholder="3년 이상"
+                                        value={form.experience}
+                                        onChange={e => handleChange('experience', e.target.value)}
+                                        className={inputClass('experience')}
+                                    />
+                                    {errors.experience && (
+                                        <p className="text-red-500 text-[11px] mt-1 font-[Paperozi]">연차를 입력해주세요.</p>
+                                    )}
+                                </div>
                             </div>
 
                             {/* 개인정보 동의 */}

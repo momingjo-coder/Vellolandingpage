@@ -31,7 +31,7 @@ export function Navigation({ scrolled }: NavigationProps) {
             className={`transition-all duration-300 ${scrolled ? 'h-[20px]' : 'h-[26px]'}`}
           />
           <span className={`text-[10px] text-[#64748b] font-extrabold transition-all duration-300 ${scrolled ? 'opacity-0 w-0 overflow-hidden' : 'opacity-100'}`}>
-            by intwin
+            by intween
           </span>
         </a>
 

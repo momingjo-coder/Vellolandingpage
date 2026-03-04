@@ -96,7 +96,7 @@ export function Checklist({ checkedItems = [], onToggleItem }: ChecklistProps) {
             {/* 말풍선 - 캐릭터 오른쪽 */}
             <div className="relative -ml-2">
               <div
-                className="bg-[#11b8a6] text-white text-xs font-bold font-[Paperozi] break-keep px-4 py-2.5 rounded-xl shadow-md md:whitespace-nowrap max-w-[200px] md:max-w-none"
+                className="bg-[#11b8a6] text-white text-sm font-bold font-[Paperozi] break-keep px-4 py-2.5 rounded-xl shadow-md md:whitespace-nowrap max-w-[200px] md:max-w-none"
               >
                 위의 항목 중 하나라도 해당된다면,{' '}
                 지금 <span className="text-[#FBBF24]">Vello</span>로 해결하세요.
