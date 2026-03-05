@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
-// --- 부속 컴포넌트: FloatingInput (동일) ---
 interface FloatingInputProps {
   label: string;
   type?: string;
@@ -32,14 +31,13 @@ function FloatingInput({ label, type = 'text', required, value, onChange }: Floa
 export function CTABlock() {
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyIPGIzJqhrhwZCSPZGer-I2dizKR9kFqdmZVrHP8J0LxzznqM-hP5CNMCy3A2y8uSDxA/exec';
 
-  const [submitted, setSubmitted] = useState(false); // 성공 화면 전환용
+  const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({ company: '', name: '', email: '', job: '', budget: '', career: '' });
   const [phone, setPhone] = useState({ p1: '010', p2: '', p3: '' });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // 1. 데이터 준비
     const data = new FormData();
     data.append('company', formData.company);
     data.append('name', formData.name);
@@ -49,14 +47,9 @@ export function CTABlock() {
     data.append('career', formData.career);
     data.append('phone', `${phone.p1}-${phone.p2}-${phone.p3}`);
 
-    // 2. 백그라운드 전송 (Non-blocking)
     fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: data }).catch((err) => console.error(err));
 
-    // 3. UI 즉시 변경 (성공 메시지로 교체)
     setSubmitted(true);
-
-    // 4. 5초 후 다시 폼으로 돌아가고 싶다면 (선택 사항)
-    // setTimeout(() => { setSubmitted(false); resetForm(); }, 5000);
   };
 
   const resetForm = () => {
