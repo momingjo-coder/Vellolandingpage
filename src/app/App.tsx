@@ -16,7 +16,7 @@ import { StrategicValue } from './components/StrategicValue';
 import { TechStackMarquee } from './components/TechStackMarquee';
 import { Footer } from './components/Footer';
 
-import { FixedChat } from './components/FixedChat';
+// import { FixedChat } from './components/FixedChat';
 import { FloatingBar } from './components/FloatingBar';
 
 export default function App() {
@@ -24,7 +24,7 @@ export default function App() {
   const [checkedItems, setCheckedItems] = useState<boolean[]>([false, false, false, false, false, false]);
 
   const handleToggleItem = useCallback((index: number) => {
-    setCheckedItems(prev => {
+    setCheckedItems((prev) => {
       const next = [...prev];
       next[index] = !next[index];
       return next;
@@ -70,7 +70,7 @@ export default function App() {
     <div className="min-h-screen bg-gradient-to-b from-[#EAF8F5] via-[#E4F6F2] to-[#F7FAFF]">
       <Navigation scrolled={scrolled} />
 
-      <FixedChat />
+      {/* <FixedChat /> */}
       <FloatingBar />
 
       <main id="top" className="pt-[92px]">
