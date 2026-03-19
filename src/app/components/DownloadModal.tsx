@@ -36,38 +36,30 @@ export function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // ... 유효성 검사 로직 (기존과 동일) ...
-    const newErrors: Record<string, boolean> = {};
-    if (!form.company.trim()) newErrors.company = true;
-    if (!form.name.trim()) newErrors.name = true;
-    if (!form.email.trim()) newErrors.email = true;
-    if (!form.phone.trim()) newErrors.phone = true;
-    if (!form.budget.trim()) newErrors.budget = true;
-    if (!form.experience.trim()) newErrors.experience = true;
-    setErrors(newErrors);
-    setShowAgreeError(!agreed);
-    if (Object.keys(newErrors).length > 0 || !agreed) return;
+    const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbzmUc3TBEh6wiaCbobt0sv23Hla-pl7LtcnXVPyy1WPDt3RJUi7HC2DnwZnlh_jUqQZ/exec';
 
-    // 1. 구글 시트 전송 데이터 포맷팅
-    const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxbTy0G0_3zGbdtBemnkSdwHhmMP5OAqi7M7vhXA3SqzM7LTUPF9_FlIbsOUeekL20I/exec';
+    // 가장 원시적인 방법으로 전송 테스트
+    const testData = new URLSearchParams();
+    testData.append('company', form.company);
+    testData.append('name', form.name);
+    testData.append('email', form.email);
+    testData.append('phone', form.phone);
+    testData.append('budget', form.budget);
+    testData.append('experience', form.experience);
 
-    // JSON 대신 URLSearchParams 사용 (GAS와 통신 시 가장 확실한 방법)
-    const searchParams = new URLSearchParams();
-    searchParams.append('company', form.company);
-    searchParams.append('name', form.name);
-    searchParams.append('email', form.email);
-    searchParams.append('phone', form.phone);
-    searchParams.append('budget', form.budget);
-    searchParams.append('experience', form.experience);
-
-    fetch(GOOGLE_SHEET_URL, {
-      method: 'POST',
-      mode: 'no-cors', // 여전히 no-cors를 사용하지만 데이터 형식이 맞아서 들어갑니다.
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: searchParams.toString(),
-    }).catch((err) => console.error('전송 실패:', err));
+    try {
+      await fetch(GOOGLE_SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors', // CORS 무시
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: testData.toString(),
+      });
+      console.log('전송 요청 보냄');
+    } catch (err) {
+      console.error('네트워크 에러:', err);
+    }
 
     // 2. PDF 다운로드 로직 (기존과 동일)
     try {
