@@ -36,7 +36,7 @@ export function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbzmUc3TBEh6wiaCbobt0sv23Hla-pl7LtcnXVPyy1WPDt3RJUi7HC2DnwZnlh_jUqQZ/exec';
+    const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxo_pDXBgdEz4PmtI2A8KTF66blnfd5fsPNqHUJem_AO-827SdSmaKKM9RO85ydIfxT/exec';
 
     // 가장 원시적인 방법으로 전송 테스트
     const testData = new URLSearchParams();
