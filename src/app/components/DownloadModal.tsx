@@ -50,7 +50,7 @@ export function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
     if (Object.keys(newErrors).length > 0 || !agreed) return;
 
     // 2. 구글 시트 백그라운드 전송 (기다리지 않음)
-    const GOOGLE_SHEET_URL = 'YOUR_DEPLOYED_URL_HERE';
+    const GOOGLE_SHEET_URL = 'AKfycbw8YSY72wccvcrYgzJcYE-X8sjgZ4VcmUaFbExT3PrvY0LAgymeAID1HqkVYYeBBagd';
     fetch(GOOGLE_SHEET_URL, {
       method: 'POST',
       mode: 'no-cors',
